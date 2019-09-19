@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   render() {
+    var { theme } = this.state
 
     const lightTheme = createMuiTheme({
       palette: {
@@ -68,10 +69,10 @@ class App extends Component {
 
     return ( 
       <Fragment>
-        <ThemeProvider theme = {this.state.theme ? darkTheme : lightTheme}>
+        <ThemeProvider theme = {theme ? darkTheme : lightTheme}>
           <CssBaseline />
           <Home />
-          <ThemeButton clickHandler={this.toogleTheme}/>
+          <ThemeButton clickHandler={this.toogleTheme} dataHandler={theme} />
         </ThemeProvider>
       </Fragment>
     );

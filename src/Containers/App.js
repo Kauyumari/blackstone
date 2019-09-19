@@ -13,16 +13,22 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      theme: Cookies.getJSON('profile').theme
-    })
+    if (Cookies.getJSON('theme')) {
+      this.setState({
+        theme: Cookies.getJSON('theme')
+      })
+    } else {
+      Cookies.set('theme', this.state.theme)
+    }
+    
+    console.log(Cookies.get());
   }
 
   toogleTheme = () => {
-    Cookies.set('profile', {theme: !this.state.theme})
     this.setState({
       theme: !this.state.theme
     })
+    Cookies.set('theme', !this.state.theme)
   }
 
   render() {

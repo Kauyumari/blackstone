@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Card, CardMedia, CardContent, Typography, Box, CardActions, IconButton, Grid } from '@material-ui/core';
+import { Card, CardMedia, CardContent, Typography, Box, CardActions, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -53,9 +53,9 @@ const Slide = (props) => {
             <Typography
               variant="body2"
               color="textSecondary"
-              className=""
+              className={classes.paragraph}
               >
-                <div className={classes.paragraph}>{props.description}</div>                  
+                {props.description}                 
             </Typography>            
           </CardContent>
         </Box>

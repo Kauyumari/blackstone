@@ -37,7 +37,6 @@ const Home = () => {
 
   const beginHover = () => {
     setHover(true)
-    console.log("im being hovered");
   }
   const stopHover = () => {
     setHover(false)

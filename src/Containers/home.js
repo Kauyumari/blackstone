@@ -1,8 +1,14 @@
 import React, { Fragment } from 'react';
 import Container from '@material-ui/core/Container';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import Slide from '../Components/card';
 
 const Home = () => {
+  const slides = [{},{},{},{},{},{},{},{},{},{}]
+  const responsive = {
+    mobile
+  }
   return ( 
     <Fragment>
       <Container style={{
@@ -11,7 +17,13 @@ const Home = () => {
                           alignItems: "center", 
                           justifyContent: "center"
                         }} >
-        <Slide/>
+        <Carousel>
+          {
+            slides.map((arr, key) => 
+              <Slide/>
+            )
+          }
+        </Carousel>
       </Container>
     </Fragment>
   );
